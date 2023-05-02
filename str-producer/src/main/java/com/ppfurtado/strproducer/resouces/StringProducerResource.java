@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @RequestMapping(value = "producer")
 @RestController
-public class StringProducerResoucer {
+public class StringProducerResource {
 
     private final StringProducerService service;
 
