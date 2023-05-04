@@ -10,18 +10,18 @@ import org.springframework.stereotype.Component;
 @Component
 public class StringConsumerListener {
 
-    @StrConsumerCustonListener(groupId = "0")
+    @StrConsumerCustonListener(groupId = "group-0")
     public void create(String message){
         log.info("CREATE ::: Receive message {}", message);
         throw new IllegalArgumentException("EXCPETITON...");
     }
 
-    @StrConsumerCustonListener(groupId = "1")
+    @StrConsumerCustonListener(groupId = "group-1")
     public void log(String message){
         log.info("LOG ::: Receive message {}", message);
     }
 
-    @StrConsumerCustonListener(groupId = "2", containerFactory = "validMessageContainFactory")
+    @StrConsumerCustonListener(groupId = "group-2", containerFactory = "validMessageContainFactory")
     public void history(String message){
         log.info("HISTORY ::: Receive message {}", message);
     }
