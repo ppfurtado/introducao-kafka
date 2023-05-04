@@ -13,6 +13,7 @@ public class StringConsumerListener {
     @StrConsumerCustonListener(groupId = "0")
     public void create(String message){
         log.info("CREATE ::: Receive message {}", message);
+        throw new IllegalArgumentException("EXCPETITON...");
     }
 
     @StrConsumerCustonListener(groupId = "1")
