@@ -13,15 +13,7 @@ public class StringProducerService {
     private final KafkaTemplate<String, String> kafkaTemplate;
 
     public void sendMessage(String message){
-        kafkaTemplate.send("str-topic", message).whenComplete((result, ex) -> {
-            if (ex == null){
-                log.info("Send message with sucess {}", message);
-                log.info("Partition {}, offset {}",
-                        result.getRecordMetadata().partition(),
-                        result.getRecordMetadata().offset());
-            } else {
-                log.error("error send message");
-            }
-        });
+        log.info("Send message {}", message);
+        kafkaTemplate.send("str-topic", message);
     }
 }
