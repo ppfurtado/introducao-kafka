@@ -25,7 +25,7 @@ public class KafkaAdminConfig {
     }
 
     @Bean
-    public KafkaAdmin.NewTopics newTopics(KafkaAdmin kafkaAdmin){
+    public KafkaAdmin.NewTopics newTopics(){
          return new KafkaAdmin.NewTopics(TopicBuilder.name("payment-topic").partitions(1).build());
     }
 }
